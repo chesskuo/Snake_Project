@@ -2,7 +2,7 @@ Snake[] snakes;
 int num = 800;
 int count = 0;
 int score = 0;
-boolean gamemode = false;
+boolean gamemode = false, end = false;
 
 void setup(){
 	size(1200,900);
@@ -49,9 +49,8 @@ void draw(){
 	for(int i = 0 ; i < num ; i++ ){
 
 		if(i == 0){ // hit the wall
-			if((snakes[1].x < 0 || snakes[1].x > 845) || (snakes[1].y < 0 || snakes[1].y > 845)){
+			if((snakes[1].x < 25 || snakes[1].x > 845) || (snakes[1].y < 25 || snakes[1].y > 845)){
 				end_game();
-				gamemode = false;
 			}
 		}
 
@@ -76,17 +75,32 @@ void FirstValue(){
 void keyPressed() {
 	if( key == 'w' || key == 'a' || key == 's' || key == 'd' )
 		snakes[0].turn(key);
-	if( key == ' ' )
+	if( key == ' ' ){
 		gamemode = !gamemode;
+		if(end == true){
+			end = false;
+			setup();
+		}
+	}
 }
 
 void mousePressed(){
-	if(mouseButton == LEFT)
+	if(mouseButton == LEFT){
 		gamemode = !gamemode;
+		if(end == true){
+			gamemode = false;
+			end = false;
+			setup();
+		}
+	}
 }
 
 void end_game(){
-	setup();
+	gamemode = false;
+	end = true;
+	// loser will change to pic in the future
+	textSize(100);
+	text("LOSER!!!", 300, 450);
 }
 
 class Snake {
