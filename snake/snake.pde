@@ -65,6 +65,7 @@ void keyPressed() {
 class Snake {
 
 	boolean on = false;
+	int path_num = 30;
 	int x,y;
 	char path = 'd';
 
@@ -75,11 +76,25 @@ class Snake {
 	}
 
 	void turn(char wasd){
-		path = wasd;
+		if( wasd == 'w' && path != 's' )
+			path = wasd;
+		else if( wasd == 's' && path != 'w' )
+			path = wasd;
+		else if( wasd == 'a' && path != 'd' )
+			path = wasd;
+		else if( wasd == 'd' && path != 'a' )
+			path = wasd;
 	}
 
 	void follow(char pre){
-		path = pre;
+		if( path_num == 0 ){
+			path_num = 30;
+			path = pre;
+		}
+
+		if( path != pre ){
+			path_num = path_num - 3;
+		}
 	}
 
 	void Run(){
