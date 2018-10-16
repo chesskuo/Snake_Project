@@ -80,11 +80,6 @@ class Snake {
 		y = seat_y;
 	}
 
-	// void turn(char wasd){
-	// 	if( wasd == 'w')
-
-	// }
-
 	void Run(){
 		if(on==true){
 			x = x + 3;
