@@ -97,6 +97,7 @@ void keyPressed()
 
 		if(end == true)
 		{
+			gamemode = false;
 			end = false;
 			setup();
 		}

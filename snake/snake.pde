@@ -78,6 +78,7 @@ void keyPressed() {
 	if( key == ' ' ){
 		gamemode = !gamemode;
 		if(end == true){
+			gamemode = false;
 			end = false;
 			setup();
 		}
