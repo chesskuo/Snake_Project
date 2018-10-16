@@ -2,7 +2,7 @@ Snake[] snakes;
 int num = 800;
 int count = 0;
 int score = 0;
-boolean gamemode = false;
+boolean gamemode = false, end = false;;
 
 void setup(){
 	size(1200,900);
@@ -49,11 +49,7 @@ void draw(){
 		if(i == 0)
 		{
 			if((snakes[0].x < 0 || snakes[0].x > 845) || (snakes[0].y < 0 || snakes[0].y > 845))
-			{
 				end_game();
-				gamemode = false;
-			}
-
 		}
 
 		if(gamemode == true)
@@ -95,21 +91,39 @@ class Snake {
 
 void keyPressed()
 {
-	if(key == ' ' && gamemode == false)
-		gamemode = true;
-	else if(key == ' ' && gamemode == true)
-		gamemode = false;
+	if(key == ' ')
+	{
+		gamemode = !gamemode;
+
+		if(end == true)
+		{
+			end = false;
+			setup();
+		}
+	}
 }
 
 void mousePressed()
 {
-	if(mouseButton == LEFT && gamemode == false)
-		gamemode = true;
-	else if(mouseButton == LEFT && gamemode == true)
-		gamemode = false;
+	if(mouseButton == LEFT)
+	{
+		gamemode = !gamemode;
+
+		if(end == true)
+		{
+			gamemode = false;
+			end = false;
+			setup();
+		}
+	}
 }
 
 void end_game()
 {
-	setup();
+	gamemode = false;
+	end = true;
+
+	// loser will change to pic in the future
+	textSize(100);
+	text("LOSER!!!", 300, 450);
 }
