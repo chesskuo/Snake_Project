@@ -1,4 +1,16 @@
 void draw_snake(){
+
+	if( mousePressed == true && mouseButton == LEFT ){
+		if( mouseX > 950 && mouseX < 1150 && mouseY > 600 && mouseY < 700 ){
+			home = 0;
+			setup();
+		}
+	}
+
+	if( keyPressed == true ){
+		if( key == 'w' || key == 'a' || key == 's' || key == 'd' )
+			snakes[0].turn(key);
+	}
 	
 	fill(0);
 	rect(0,0,900,900);
@@ -19,7 +31,7 @@ void draw_snake(){
 
 		if(i == 0){ // hit the wall
 			if((snakes[1].x < 25 || snakes[1].x > 845) || (snakes[1].y < 25 || snakes[1].y > 845)){
-				end_game();
+				end_game_snake();
 			}
 		}
 

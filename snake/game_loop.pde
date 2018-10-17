@@ -1,4 +1,4 @@
-void FirstValue(){
+void FirstValue_snake(){
 	snakes[0].start(120,30);
 	snakes[1].start(90,30);
 	snakes[2].start(60,30);
@@ -7,8 +7,6 @@ void FirstValue(){
 }
 
 void keyPressed() {
-	if( key == 'w' || key == 'a' || key == 's' || key == 'd' )
-		snakes[0].turn(key);
 	if( key == ' ' ){
 		gamemode = !gamemode;
 		if(end == true){
@@ -19,18 +17,7 @@ void keyPressed() {
 	}
 }
 
-void mousePressed(){
-	if(mouseButton == LEFT){
-		gamemode = !gamemode;
-		if(end == true){
-			gamemode = false;
-			end = false;
-			setup();
-		}
-	}
-}
-
-void end_game(){
+void end_game_snake(){
 	gamemode = false;
 	end = true;
 	// loser will change to pic in the future
