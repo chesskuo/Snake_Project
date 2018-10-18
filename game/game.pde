@@ -8,7 +8,6 @@ int home = 0;
 
 void setup(){
 	
-	frameRate(60);
 	size(1200,900);
 	smooth();
 
@@ -19,7 +18,7 @@ void setup(){
 		set_snake();
 	}
 	else if( home == 2 ){
-
+		set_car();
 	}
 
 }
@@ -33,7 +32,7 @@ void draw(){
 		draw_snake();
 	}
 	else if( home == 2 ){
-
+		draw_car();
 	}
 
 }

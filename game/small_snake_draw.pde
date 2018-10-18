@@ -1,19 +1,4 @@
-int[] snake_x = new int[5];
-int[] snake_y = new int[5];
-int[] roop = new int[5];
-
-void draw_home(){
-	small_snake();
-
-	if( mousePressed == true && mouseButton == LEFT){
-		if( mouseX > 100 && mouseX < 550 && mouseY > 120 && mouseY < 550 ){
-			home = 1;
-			setup();
-		}
-	}
-}
-
-void small_snake(){
+void draw_small_snake(){
 	fill(0);
 	rect(100,120,450,450);
 
@@ -21,6 +6,9 @@ void small_snake(){
 	for(int i = 0 ; i < 5 ; i++ ){
 		rect(snake_x[i],snake_y[i],30,30);
 	}
+
+	fill(255,0,0);
+	ellipse(fruit_x,fruit_y,20,20);
 
 	for(int i = 0 ; i < 5 ; i++ ){
 		if( roop[i] == 1 ){

@@ -1,4 +1,7 @@
 void set_snake(){
+	
+	frameRate(60);
+		
 	score = 0;
 	count = 4;
 	background(0);
