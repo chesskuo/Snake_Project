@@ -30,7 +30,7 @@ class Snake {
 		}
 
 		if( path != pre ){
-			path_num = path_num - 3;
+			path_num = path_num - 5;
 		}
 	}
 
@@ -41,18 +41,22 @@ class Snake {
 	void run_snake(){
 		if( stop == 0 ){
 			if(on==true){
-				if( path == 'w' )
-					y = y - 3;
-				else if( path == 's' )
-					y = y + 3;
-				else if( path == 'a' )
-					x = x - 3;
-				else if( path == 'd' )
-					x = x + 3;
+				if( path == 'w' ){
+					y = y - 5;
+				}
+				else if( path == 's' ){
+					y = y + 5;
+				}
+				else if( path == 'a' ){
+					x = x - 5;
+				}
+				else if( path == 'd' ){
+					x = x + 5;
+				}
 			}
 		}
 		else{
-			stop = stop - 3;
+			stop = stop - 5;
 		}
 	}
 

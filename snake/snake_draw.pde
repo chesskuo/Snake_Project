@@ -21,7 +21,7 @@ void draw_snake(){
 	textSize(60);
 	text(score, 1030, 250);
 	// score
-
+	stroke(1);
 	if( apples.on == false ){
 		new_apple();
 	}
