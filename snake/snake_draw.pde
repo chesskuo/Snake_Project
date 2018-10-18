@@ -1,12 +1,5 @@
 void draw_snake(){
 
-	if( mousePressed == true && mouseButton == LEFT ){
-		if( mouseX > 950 && mouseX < 1150 && mouseY > 600 && mouseY < 700 ){
-			home = 0;
-			setup();
-		}
-	}
-
 	if( keyPressed == true ){
 		if( key == 'w' || key == 'a' || key == 's' || key == 'd' )
 			snakes[0].turn(key);
@@ -41,6 +34,13 @@ void draw_snake(){
 		}
 		if( i != 0 )
 			snakes[i].Display();
+	}
+
+	if( mousePressed == true && mouseButton == LEFT ){
+		if( mouseX > 950 && mouseX < 1150 && mouseY > 600 && mouseY < 700 ){
+			home = 0;
+			setup();
+		}
 	}
 
 }
