@@ -1,4 +1,3 @@
-
 void draw_home(){
 
 	background(63,72,204);
@@ -11,8 +10,6 @@ void draw_home(){
 	
 	draw_small_snake();
 	draw_small_car();
-	
-	
 
 	if( mousePressed == true && mouseButton == LEFT){
 		if( mouseX > 100 && mouseX < 550 && mouseY > 120 && mouseY < 550 ){
