@@ -2,7 +2,7 @@ void draw_snake(){
 
 	if( keyPressed == true ){
 		if( key == 'w' || key == 'a' || key == 's' || key == 'd' )
-			snakes[0].turn(key);
+			snakes[0].turn_snake(key);
 	}
 	
 	fill(0);
@@ -15,11 +15,17 @@ void draw_snake(){
 	rect(0,870,900,30);
 	// back & frame
 
+	fill(0);
+	rect(1000,150,300,300);
 	fill(255);
 	textSize(60);
 	text(score, 1030, 250);
 	// score
-	fill(0,255,0);
+
+	if( apples.on == false ){
+		new_apple();
+	}
+
 	for(int i = 0 ; i < num ; i++ ){
 
 		if(i == 0){ // hit the wall
@@ -29,12 +35,22 @@ void draw_snake(){
 		}
 
 		if( i != 0 && gamemode == true){//turn
-			snakes[i].Run();
-			snakes[i].follow(snakes[i-1].path);
+			snakes[i].run_snake();
+			snakes[i].follow_snake(snakes[i-1].path);
 		}
-		if( i != 0 )
-			snakes[i].Display();
+		if( i != 0 ){
+			fill(255,0,0);
+			apples.display_apple();
+			fill(0,255,0);
+			snakes[i].display_snake();
+		}
 	}
+
+	if( apples.x > snakes[1].x && apples.x < snakes[1].x+30 && apples.y > snakes[1].y && apples.y < snakes[1].y+30 ){
+		eat();
+	}
+
+
 
 	if( mousePressed == true && mouseButton == LEFT ){
 		if( mouseX > 950 && mouseX < 1150 && mouseY > 600 && mouseY < 700 ){

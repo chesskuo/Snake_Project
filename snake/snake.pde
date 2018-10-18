@@ -1,9 +1,10 @@
 Snake[] snakes;
+Apple apples;
 int num = 800;
-int count = 0;
+int count = 4;
 int score = 0;
 boolean gamemode = false, end = false;
-int home = 0;
+int home = 1;
 
 void setup(){
 
