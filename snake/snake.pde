@@ -4,10 +4,11 @@ int num = 800;
 int count = 4;
 int score = 0;
 boolean gamemode = false, end = false;
-int home = 1;
+int home = 0;
 
 void setup(){
-
+	
+	frameRate(60);
 	size(1200,900);
 	smooth();
 
