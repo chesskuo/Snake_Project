@@ -15,6 +15,6 @@ void set_small_car(){
 	small_road[5] = 510;
 	player_head = 710;
 	enemy_head_x = int( random(710,1010) );
-	enemy_head_y = int( random(150,360) ); 
+	enemy_head_y = int( random(150,360) );
 	player_direction = 1;
 }
