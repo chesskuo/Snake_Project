@@ -47,14 +47,14 @@ void draw_car()
 
 	// edge check
 	if(player._x[1] <= 0 || player._x[3] >= 840)
-		end_game_car();
+		end_game();
 
 	// hit check
 	for(int i=0; i<7; i++)
 		for(int j=0; j<7; j++)
 			for(int k=0; k<2; k++)
 				if(player._x[i] == enemy[k]._x[j] && player._y[i] == enemy[k]._y[j])
-					end_game_car();
+					end_game();
 
 	// time clock reset
 	if(_time == 0){
