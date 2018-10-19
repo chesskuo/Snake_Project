@@ -1,3 +1,7 @@
+boolean gamemode = false;
+boolean pause = false;
+boolean end = false;
+
 void FirstValue_snake(){
 	snakes[0].start_snake(120,30);
 	snakes[1].start_snake(90,30);
@@ -13,19 +17,38 @@ void Grow_snake(){
 }
 
 void keyPressed() {
-	if( key == ' ' ){
+	if( key == ' ' )
+	{
 		gamemode = !gamemode;
-		if(end == true){
+
+
+		if(end == true)
+		{
 			gamemode = false;
 			end = false;
+
 			setup();
 		}
+		else
+			pause = !pause;
 	}
 }
 
-void end_game_snake(){
+void end_game_snake()
+{
 	gamemode = false;
 	end = true;
+
+	// loser will change to pic in the future
+	textSize(100);
+	text("LOSER!!!", 300, 450);
+}
+
+void end_game_car()
+{
+	gamemode = false;
+	end = true;
+
 	// loser will change to pic in the future
 	textSize(100);
 	text("LOSER!!!", 300, 450);

@@ -21,6 +21,13 @@ void draw_snake(){
 	textSize(60);
 	text(score, 1030, 250);
 	// score
+
+	if(pause == false)
+	{
+		textSize(60);
+		text("Pause", 380, 480);
+	}// pause
+
 	stroke(1);
 	if( apples.on == false ){
 		new_apple();
@@ -34,7 +41,7 @@ void draw_snake(){
 			}
 		}
 
-		if( i != 0 && gamemode == true){//turn
+		if( i != 0 && gamemode == true){// turn
 			snakes[i].run_snake();
 			snakes[i].follow_snake(snakes[i-1].path);
 		}

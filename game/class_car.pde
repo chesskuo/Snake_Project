@@ -38,6 +38,30 @@ class Car
 		for(int i=0; i<7; i++)
 			rect(_x[i], _y[i], 60, 60);
 	}
+
+	void move(char direc)
+	{
+		if(end != true)
+		{
+			if(direc == 'a')
+			{
+				for(int i=0; i<7; i++)
+					_x[i] -= 60;
+			}
+			else if(direc == 'd')
+			{
+				for(int i=0; i<7; i++)
+					_x[i] += 60;
+			}
+		}
+	}
+
+	void enemy_mov()
+	{
+		if(end != true)
+			for(int i=0; i<7; i++)
+				_y[i] += 60;
+	}
 }
 
 class Road
@@ -68,7 +92,8 @@ class Road
 				rect(840, _y[i], 60, 60);
 			}
 
-			_y[i] += 60;
+			if(pause == false && _time == 0 && end != true)
+				_y[i] += 60;
 		}
 	}
 }
