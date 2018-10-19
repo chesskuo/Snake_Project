@@ -25,6 +25,7 @@ void draw_snake(){
 	if(pause == false)
 	{
 		textSize(60);
+		fill(63,72,204);
 		text("Pause", 380, 480);
 	}// pause
 

@@ -2,7 +2,7 @@ void set_snake(){
 	
 	frameRate(60);
 	
-	pause = true;
+	pause = false;
 	score = 0;
 	count = 4;
 	background(0);

@@ -5,12 +5,13 @@ void draw_car()
 	rect(0, 0, 900, 900);
 
 	fill(0);
-	rect(1000,150,300,300);
+	rect(1000,200,300,300);
 	fill(255);
 	textSize(60);
 	text(score, 1030, 250);
 
 	_time--;
+	player_time--;
 
 	// circle check
 	if(road[5]._y[0] >= 900)
@@ -35,17 +36,17 @@ void draw_car()
 		if(enemy[i]._y[0] >= 900)
 		{
 			score += 10;
-			enemy[i].init((int)random(2, 11)*60, (int)random(1, 4)*-60);
+			enemy[i].init((int)random(2, 13)*60, (int)random(-60,-240));
 		}
-
-		enemy[i].display();
 
 		if(_time == 0 && pause == false)
 			enemy[i].enemy_mov();
+
+		enemy[i].display();
 	}
 
 	// user input
-	if(keyPressed == true && _time%10 == 0 && pause == false)
+	if(keyPressed == true && player_time == 0 && pause == false)
 		player.move(key);
 
 	// edge check
@@ -60,19 +61,31 @@ void draw_car()
 					end_game_car();
 
 	// time clock reset
-	if(_time == 0)
-		_time = 20;
+	if(_time == 0){
+		if(score>=200)
+			_time = 5;
+		else if(score>=150)
+			_time = 10;
+		else if(score>=100)
+			_time = 15;
+		else
+			_time = 20;
+	}
+
+	if(player_time == 0)
+		player_time = 8;
 
 	// pause
 	if(pause == true)
 	{
+		fill(63,72,204);
 		textSize(60);
 		text("Pause", 380, 480);
 	}
 
 	// to home page
 	if( mousePressed == true && mouseButton == LEFT ){
-		if( mouseX > 950 && mouseX < 1150 && mouseY > 600 && mouseY < 700 ){
+		if( mouseX > 950 && mouseX < 1150 && mouseY > 700 && mouseY < 800 ){
 			home = 0;
 			setup();
 		}

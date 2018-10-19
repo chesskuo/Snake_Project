@@ -21,10 +21,10 @@ void keyPressed() {
 	{
 		gamemode = !gamemode;
 
-
 		if(end == true)
 		{
 			gamemode = false;
+			pause = false;
 			end = false;
 
 			setup();
@@ -32,6 +32,8 @@ void keyPressed() {
 		else
 			pause = !pause;
 	}
+
+
 }
 
 void end_game_snake()
@@ -41,6 +43,7 @@ void end_game_snake()
 
 	// loser will change to pic in the future
 	textSize(100);
+	fill(63,72,204);
 	text("LOSER!!!", 300, 450);
 }
 
@@ -51,5 +54,6 @@ void end_game_car()
 
 	// loser will change to pic in the future
 	textSize(100);
+	fill(63,72,204);
 	text("LOSER!!!", 300, 450);
 }
