@@ -64,18 +64,7 @@ void keyPressed() {
 
 }
 
-void end_game_snake()
-{
-	gamemode = false;
-	end = true;
-
-	// loser will change to pic in the future
-	textSize(100);
-	fill(63,72,204);
-	text("LOSER!!!", 250, 475);
-}
-
-void end_game_car()
+void end_game()
 {
 	gamemode = false;
 	end = true;
@@ -100,6 +89,4 @@ void draw_score(int num,int x){
 	text(second,x+50,250);
 	text(third,x+100,250);
 	text(fourth,x+150,250);
-
-
 }
