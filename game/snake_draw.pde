@@ -12,7 +12,9 @@ void draw_snake(){
 	fill(255);
 	textSize(60);
 	text("SCORE", 940, 150);
-	draw_score(score,950);
+	draw_score(score,250);
+	text("HIGH",960,350);
+	draw_score(high_snake,450);
 	// score
 	fill(195);
 	rect(950,700,200,100);
@@ -70,6 +72,9 @@ void draw_snake(){
 	if( Math.abs(apples.x - snakes[1].x) < 20 && Math.abs(apples.y - snakes[1].y) < 20 ){
 		eat();
 	}
+
+	if( score > high_snake )
+		high_snake = score;
 
 	if( mousePressed == true && mouseButton == LEFT ){
 		if( mouseX > 950 && mouseX < 1150 && mouseY > 700 && mouseY < 800 ){

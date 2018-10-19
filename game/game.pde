@@ -4,6 +4,8 @@ int num = 800;
 int count = 4;
 int score = 0;
 int home = 0;
+int high_snake = 0;
+int high_car = 0;
 PFont font;
 
 void setup(){

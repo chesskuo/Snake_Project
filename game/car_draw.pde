@@ -9,7 +9,9 @@ void draw_car()
 	fill(255);
 	textSize(60);
 	text("SCORE", 940, 150);
-	draw_score(score,950);
+	draw_score(score,250);
+	text("HIGH",960,350);
+	draw_score(high_car,450);
 
 	_time--;
 
@@ -67,6 +69,9 @@ void draw_car()
 		else
 			_time = 20;
 	}
+
+	if( score > high_car )
+		high_car = score;
 
 	// pause
 	if(gamemode == false && end == false )

@@ -73,7 +73,7 @@ void end_game()
 	text("LOSER!!!", 250, 475);
 }
 
-void draw_score(int num,int x){
+void draw_score(int num,int y){
 	int first,second,third,fourth;
 	fourth = num%10;
 	num /= 10;
@@ -83,8 +83,8 @@ void draw_score(int num,int x){
 	num /= 10;
 	first = num%10;
 
-	text(first,x,250);
-	text(second,x+50,250);
-	text(third,x+100,250);
-	text(fourth,x+150,250);
+	text(first,950,y);
+	text(second,1000,y);
+	text(third,1050,y);
+	text(fourth,1100,y);
 }
