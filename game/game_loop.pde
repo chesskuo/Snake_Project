@@ -30,12 +30,37 @@ void keyPressed() {
 	if(home==1 && gamemode == true){
 		if( key == 'w' || key == 'a' || key == 's' || key == 'd' )
 			snakes[0].turn_snake(key);
+		if( key == 'W' || key == 'A' || key == 'S' || key == 'D' )
+			snakes[0].turn_snake(Character.toLowerCase(key));
+		if( key == CODED )
+			switch (keyCode) {
+				case UP:
+					snakes[0].turn_snake('w');
+					break;
+				case DOWN:
+					snakes[0].turn_snake('s');
+					break;
+				case LEFT:
+					snakes[0].turn_snake('a');
+					break;
+				case RIGHT:
+					snakes[0].turn_snake('d');
+			}
 	}
 	if(home==2 && gamemode == true){
-		if(key == 'a' || key == 'd' )
+		if( key == 'a' || key == 'd' )
 			player.move(key);
+		if( key == 'A' || key == 'D' )
+			player.move(Character.toLowerCase(key));
+		if( key == CODED )
+			switch (keyCode) {
+				case LEFT:
+					player.move('a');
+					break;
+				case RIGHT:
+					player.move('d');
+			}
 	}
-	
 
 }
 
@@ -61,3 +86,20 @@ void end_game_car()
 	text("LOSER!!!", 250, 475);
 }
 
+void draw_score(int num,int x){
+	int first,second,third,fourth;
+	fourth = num%10;
+	num /= 10;
+	third = num%10;
+	num /= 10;
+	second = num%10;
+	num /= 10;
+	first = num%10;
+
+	text(first,x,250);
+	text(second,x+50,250);
+	text(third,x+100,250);
+	text(fourth,x+150,250);
+
+
+}

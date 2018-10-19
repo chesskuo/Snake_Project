@@ -1,7 +1,9 @@
+boolean snakes_end;
 void set_snake(){
 	
 	frameRate(60);
 
+	snakes_end = false;
 	score = 0;
 	count = 4;
 	background(0);
@@ -16,7 +18,7 @@ void set_snake(){
 	// score text
 	fill(255);
 	textSize(60);
-	text("SCORE", 950, 150);
+	text("SCORE", 940, 150);
 	
 	// pause = true; & start
 	fill(195);

@@ -1,10 +1,5 @@
 class Car
 {
-	//   0
-	// 1 2 3
-	//   4
-	// 5   6
-
 	int[] _x = new int[7];
 	int[] _y = new int[7];
 	boolean on = true;

@@ -14,7 +14,7 @@ void set_car()
 	// score text
 	fill(255);
 	textSize(60);
-	text("SCORE", 950, 150);
+	text("SCORE", 940, 150);
 	
 	// pause & start
 	fill(195);

@@ -8,8 +8,8 @@ void draw_car()
 	rect(900,100,300,500);
 	fill(255);
 	textSize(60);
-	text("SCORE", 950, 150);
-	text(score, 1030, 250);
+	text("SCORE", 940, 150);
+	draw_score(score,950);
 
 	_time--;
 
