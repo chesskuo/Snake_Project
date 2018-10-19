@@ -36,5 +36,4 @@ void draw(){
 	else if( home == 2 ){
 		draw_car();
 	}
-
 }
