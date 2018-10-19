@@ -1,9 +1,9 @@
 void new_apple(){
-	apples.start_apple( int(random(60,840)) , int(random(60,840)) );
+	apples.start_apple( int(random(1,28)*30+15) , int(random(1,28)*30+15) );
 	while(true){
 		for(int i = 1 ; i < count ; i++ ){
-			if( apples.x > snakes[i].x && apples.x < snakes[i].x+30 && apples.y > snakes[i].y && apples.y < snakes[i].y+30 ){
-				apples.start_apple( int(random(60,840)) , int(random(60,840)) );
+			if( apples.x == snakes[i].x && apples.y == snakes[i].y ){
+				apples.start_apple( int(random(1,28)*30+15) , int(random(1,28)*30+15) );
 				continue;
 			}
 		}

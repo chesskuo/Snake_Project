@@ -1,11 +1,12 @@
 boolean snakes_end;
+int snakes_time;
 void set_snake(){
 	
 	frameRate(60);
-
+	snakes_time = 10;
 	snakes_end = false;
 	score = 0;
-	count = 4;
+	count = 3;
 	background(0);
 	snakes = new Snake[num];
 	apples = new Apple();
@@ -14,7 +15,7 @@ void set_snake(){
 	}
 
 	FirstValue_snake();
-	apples.start_apple( int(random(60,840)) , int(random(60,840)) );
+	apples.start_apple( int(random(1,28)*30+15) , int(random(1,28)*30+15) );
 	// score text
 	fill(255);
 	textSize(60);

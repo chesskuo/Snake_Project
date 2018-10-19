@@ -2,16 +2,14 @@ boolean gamemode = false;
 boolean end = false;
 
 void FirstValue_snake(){
-	snakes[0].start_snake(120,30);
-	snakes[1].start_snake(90,30);
-	snakes[2].start_snake(60,30);
-	snakes[3].start_snake(30,30);
+	snakes[0].start_snake(105,45);
+	snakes[1].start_snake(75,45);
+	snakes[2].start_snake(45,45);
 }
 
 void Grow_snake(){
 	snakes[count].start_snake( snakes[count-1].x , snakes[count-1].y );
 	snakes[count].stop_snake();
-	snakes[count].follow_snake(snakes[count-1].path);
 	count++;
 }
 

@@ -23,46 +23,42 @@ class Snake {
 			path = wasd;
 	}
 
-	void follow_snake(char pre){
-		if( path_num == 0 ){
-			path_num = 30;
-			path = pre;
-		}
-
-		if( path != pre ){
-			path_num = path_num - 5;
-		}
+	void follow_snake(int pre_x,int pre_y){
+		x = pre_x;
+		y = pre_y;
 	}
 
 	void stop_snake(){
 		stop = 30;
 	}
 
-	void run_snake(){
-		if( stop == 0 ){
-			if(on==true){
-				if( path == 'w' ){
-					y = y - 5;
-				}
-				else if( path == 's' ){
-					y = y + 5;
-				}
-				else if( path == 'a' ){
-					x = x - 5;
-				}
-				else if( path == 'd' ){
-					x = x + 5;
+	void run_snake(int timeset){
+		if(timeset==0){
+			if( stop == 0 ){
+				if(on == true){
+					if( path == 'w' ){
+						y = y - 30;
+					}
+					else if( path == 's' ){
+						y = y + 30;
+					}
+					else if( path == 'a' ){
+						x = x - 30;
+					}
+					else if( path == 'd' ){
+						x = x + 30;
+					}
 				}
 			}
-		}
-		else{
-			stop = stop - 5;
+			else{
+				stop = stop - 30;
+			}
 		}
 	}
 
 	void display_snake(){
 		if(on==true)
-			rect(x,y,30,30);
+			rect(x-15,y-15,30,30);
 	}
 
 }
