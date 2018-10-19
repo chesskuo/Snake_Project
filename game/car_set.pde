@@ -2,28 +2,26 @@ Car player;
 Car[] enemy;
 Road[] road;
 int _time = 20;
-int player_time = 8;
 
 void set_car()
 {	
 	frameRate(60);
 	
 	score = 0;
-	pause = true;
 
 	background(0);
 
 	// score text
 	fill(255);
-	textSize(80);
-	text("Score", 950, 150);
+	textSize(60);
+	text("SCORE", 950, 150);
 	
 	// pause & start
 	fill(195);
 	rect(950,700,200,100);
 	textSize(50);
 	fill(0);
-	text("Home",970,770);
+	text("HOME",980,770);
 
 	// road init
 	road = new Road[6];

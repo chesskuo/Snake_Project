@@ -92,7 +92,7 @@ class Road
 				rect(840, _y[i], 60, 60);
 			}
 
-			if(pause == false && _time == 0 && end != true)
+			if(gamemode == true && _time == 0 && end != true)
 				_y[i] += 60;
 		}
 	}

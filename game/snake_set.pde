@@ -1,8 +1,7 @@
 void set_snake(){
 	
 	frameRate(60);
-	
-	pause = false;
+
 	score = 0;
 	count = 4;
 	background(0);
@@ -16,13 +15,13 @@ void set_snake(){
 	apples.start_apple( int(random(60,840)) , int(random(60,840)) );
 	// score text
 	fill(255);
-	textSize(80);
-	text("Score", 950, 150);
+	textSize(60);
+	text("SCORE", 950, 150);
 	
 	// pause = true; & start
 	fill(195);
-	rect(950,600,200,100);
+	rect(950,700,200,100);
 	textSize(50);
 	fill(0);
-	text("Home",970,670);
+	text("HOME",980,770);
 }

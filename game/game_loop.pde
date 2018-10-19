@@ -1,5 +1,4 @@
 boolean gamemode = false;
-boolean pause = false;
 boolean end = false;
 
 void FirstValue_snake(){
@@ -24,15 +23,19 @@ void keyPressed() {
 		if(end == true)
 		{
 			gamemode = false;
-			pause = false;
 			end = false;
-
 			setup();
 		}
-		else
-			pause = !pause;
 	}
-
+	if(home==1 && gamemode == true){
+		if( key == 'w' || key == 'a' || key == 's' || key == 'd' )
+			snakes[0].turn_snake(key);
+	}
+	if(home==2 && gamemode == true){
+		if(key == 'a' || key == 'd' )
+			player.move(key);
+	}
+	
 
 }
 
@@ -44,7 +47,7 @@ void end_game_snake()
 	// loser will change to pic in the future
 	textSize(100);
 	fill(63,72,204);
-	text("LOSER!!!", 300, 450);
+	text("LOSER!!!", 250, 475);
 }
 
 void end_game_car()
@@ -55,5 +58,6 @@ void end_game_car()
 	// loser will change to pic in the future
 	textSize(100);
 	fill(63,72,204);
-	text("LOSER!!!", 300, 450);
+	text("LOSER!!!", 250, 475);
 }
+

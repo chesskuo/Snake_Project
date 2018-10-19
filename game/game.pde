@@ -4,9 +4,13 @@ int num = 800;
 int count = 4;
 int score = 0;
 int home = 0;
+PFont font;
 
 void setup(){
-	
+
+	font = createFont("Minecraftia.ttf",32);
+	textFont(font);
+
 	size(1200,900);
 	smooth();
 

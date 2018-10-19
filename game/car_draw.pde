@@ -5,13 +5,13 @@ void draw_car()
 	rect(0, 0, 900, 900);
 
 	fill(0);
-	rect(1000,200,300,300);
+	rect(900,100,300,500);
 	fill(255);
 	textSize(60);
+	text("SCORE", 950, 150);
 	text(score, 1030, 250);
 
 	_time--;
-	player_time--;
 
 	// circle check
 	if(road[5]._y[0] >= 900)
@@ -39,15 +39,11 @@ void draw_car()
 			enemy[i].init((int)random(2, 13)*60, (int)random(-60,-240));
 		}
 
-		if(_time == 0 && pause == false)
+		if(_time == 0 && gamemode == true)
 			enemy[i].enemy_mov();
 
 		enemy[i].display();
 	}
-
-	// user input
-	if(keyPressed == true && player_time == 0 && pause == false)
-		player.move(key);
 
 	// edge check
 	if(player._x[1] <= 0 || player._x[3] >= 840)
@@ -72,15 +68,12 @@ void draw_car()
 			_time = 20;
 	}
 
-	if(player_time == 0)
-		player_time = 8;
-
 	// pause
-	if(pause == true)
+	if(gamemode == false && end == false )
 	{
 		fill(63,72,204);
 		textSize(60);
-		text("Pause", 380, 480);
+		text("PAUSE", 360, 480);
 	}
 
 	// to home page

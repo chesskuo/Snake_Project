@@ -2,10 +2,10 @@ void draw_home(){
 
 	background(63,72,204);
 	fill(195);
-	textSize(60);
-	text("Click Picture to Enter the Game",150,650);
-	text("by SunTalk && Chess",275,750);
-	textSize(30);
+	textSize(50);
+	text("Click Picture to Enter the Game",100,650);
+	text("by SunTalk && Chess",225,750);
+	textSize(20);
 	text("© 2018 Game-Project",450,850);
 	
 	draw_small_snake();

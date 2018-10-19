@@ -1,9 +1,9 @@
 void draw_snake(){
 
-	if( keyPressed == true ){
-		if( key == 'w' || key == 'a' || key == 's' || key == 'd' )
-			snakes[0].turn_snake(key);
-	}
+	// if( keyPressed == true ){
+	// 	if( key == 'w' || key == 'a' || key == 's' || key == 'd' )
+	// 		snakes[0].turn_snake(key);
+	// }
 	
 	fill(0);
 	rect(0,0,900,900);
@@ -19,14 +19,15 @@ void draw_snake(){
 	rect(1000,150,300,300);
 	fill(255);
 	textSize(60);
+	text("SCORE", 950, 150);
 	text(score, 1030, 250);
 	// score
 
-	if(pause == false)
+	if(gamemode == false && end == false )
 	{
 		textSize(60);
 		fill(63,72,204);
-		text("Pause", 380, 480);
+		text("PAUSE", 360, 480);
 	}// pause
 
 	stroke(1);
@@ -58,10 +59,8 @@ void draw_snake(){
 		eat();
 	}
 
-
-
 	if( mousePressed == true && mouseButton == LEFT ){
-		if( mouseX > 950 && mouseX < 1150 && mouseY > 600 && mouseY < 700 ){
+		if( mouseX > 950 && mouseX < 1150 && mouseY > 700 && mouseY < 800 ){
 			home = 0;
 			setup();
 		}
