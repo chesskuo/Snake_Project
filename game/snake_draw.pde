@@ -37,7 +37,7 @@ void draw_snake(){
 
 		if(i == 0){ // hit the wall
 			if((snakes[1].x < 25 || snakes[1].x > 845) || (snakes[1].y < 25 || snakes[1].y > 845)){
-				end_game_snake();
+				end_game();
 				snakes_end = true;
 			}
 		}
