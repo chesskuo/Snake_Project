@@ -6,7 +6,7 @@ void draw_home(){
 	text("Click Picture to Enter the Game",100,650);
 	text("by SunTalk && Chess",225,750);
 	textSize(20);
-	text("© 2018 Game-Project",450,850);
+	text("© 2018 Classic-Game",450,850);
 	
 	draw_small_snake();
 	draw_small_car();
